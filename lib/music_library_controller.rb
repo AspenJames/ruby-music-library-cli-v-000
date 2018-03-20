@@ -20,21 +20,21 @@ class MusicLibraryController
   end
 
   def list_songs
-    songs = Song.all.uniq.sort
+    songs = Song.all.sort
     songs.each_with_index do |song, index|
       puts "#{index + 1}. #{song.artist} - #{song.name} - #{song.genre}"
     end
   end
 
   def list_artists
-    artists = Artist.all.uniq.sort
+    artists = Artist.all.sort
     artists.each_with_index do |artist, index|
       puts "#{index + 1}. #{artist.name}"
     end
   end
 
   def list_genres
-    genres = Genre.all.uniq.sort
+    genres = Genre.all.sort
     genres.each_with_index do |genre, index|
       puts "#{index + 1}. #{genre.name}"
     end

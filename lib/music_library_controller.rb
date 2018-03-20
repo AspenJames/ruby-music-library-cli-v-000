@@ -3,6 +3,7 @@ class MusicLibraryController
   def initialize(path = "./db/mp3s")
     importer = MusicImporter.new(path)
     importer.import
+    @input = nil
   end
 
   def call
@@ -16,9 +17,9 @@ class MusicLibraryController
     puts "To quit, type 'exit'."
     puts "What would you like to do?"
 
-    while input != "exit"
-      input = gets.strip
-      self.send(input)
+    while @input != "exit"
+      @input = gets.strip
+      self.send(@input)
     end
   end
 

@@ -16,8 +16,10 @@ class MusicLibraryController
     puts "To quit, type 'exit'."
     puts "What would you like to do?"
 
-    input = gets.strip while input != "exit"
-    self.send(input)
+    while input != "exit"
+      input = gets.strip 
+      self.send(input)
+    end
   end
 
   def list_songs

@@ -45,7 +45,7 @@ class MusicLibraryController
     artist = gets.strip
     if Artist.find_by_name(artist)
       Artist.find_by_name(artist).songs.sort_by{|s| s.name}.each_with_index do |song, index|
-        puts "#{index + 1}. #{song.name} - #{song.genre}"
+        puts "#{index + 1}. #{song.name} - #{song.genre.name}"
       end
     end
   end
@@ -55,7 +55,7 @@ class MusicLibraryController
     genre = gets.strip
     if Genre.find_by_name(genre)
       Genre.find_by_name(genre).songs.sort_by{|s| s.name}.each_with_index do |song, index|
-        puts "#{index + 1}. #{song.artist} - #{song.name}"
+        puts "#{index + 1}. #{song.artist.name} - #{song.name}"
       end
     end
   end

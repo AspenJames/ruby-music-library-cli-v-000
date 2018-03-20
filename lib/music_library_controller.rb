@@ -17,7 +17,7 @@ class MusicLibraryController
     puts "What would you like to do?"
 
     while input != "exit"
-      input = gets.strip 
+      input = gets.strip
       self.send(input)
     end
   end

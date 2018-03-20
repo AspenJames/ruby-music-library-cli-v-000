@@ -39,7 +39,6 @@ class Song
     end
 
     def self.new_from_filename(filename)
-      # "Bill Callahan - Riding for the Feeling - indie.mp3"
       names = filename.split(" - ")
       artist = Artist.find_or_create_by_name(names[0])
       genre = Genre.find_or_create_by_name(names[2].chomp('.mp3'))

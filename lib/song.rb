@@ -29,13 +29,11 @@ class Song
     end
 
     def artist=(artist)
-      Artist.find_or_create_by_name(artist)
       @artist = artist
       artist.add_song(self)
     end
 
     def genre=(genre)
-      Genre.find_or_create_by_name(genre)
       @genre = genre
       genre.songs << self if !genre.songs.include?(self)
     end

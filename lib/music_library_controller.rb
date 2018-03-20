@@ -21,27 +21,29 @@ class MusicLibraryController
 
   def list_songs
     songs = Song.all.sort
-    
+    songs.each_with_index do |song, index|
+      puts "#{index + 1}. #{song}"
+    end
   end
 
   def list_artists
-    
+
   end
 
   def list_genres
-    
+
   end
 
   def list_songs_by_artist
-    
+
   end
 
   def list_songs_by_genre
-    
+
   end
 
   def play_song
-    
+
   end
 
 end
